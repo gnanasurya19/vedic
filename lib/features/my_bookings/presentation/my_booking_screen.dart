@@ -30,9 +30,13 @@ class MyBookingScreen extends ConsumerWidget {
           GlassIconButton(
             icon: showSearch ? Icons.close : Icons.search,
             onPress: () {
+
               ref
                   .watch(showRitualSearchBarProvider.notifier)
                   .updateValue(!showSearch);
+               ref
+                      .watch(ritualSearchQueryProvider.notifier)
+                      .updateQuery("");
             },
           ),
           GlassIconButton(
@@ -114,6 +118,9 @@ class MyBookingScreen extends ConsumerWidget {
                       ref
                           .watch(showRitualSearchBarProvider.notifier)
                           .updateValue(!showSearch);
+                       ref
+                      .watch(ritualSearchQueryProvider.notifier)
+                      .updateQuery("");
                     },
                     icon: Icon(Icons.close),
                   ),
